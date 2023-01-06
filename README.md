@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## KeDa Tech Associate Backend Test
 
-## Getting Started
+### Installation
 
-First, run the development server:
+1. Clone this repo
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+2. Install dependencies for client
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```shell
+   npm install
+   ```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. Install dependencies for server
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   ```shell
+   cd server
+   npm install
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Migrate database (in **server** directory)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```shell
+   knex migrate:up --knexfile ./configs/db.config.js
+   ```
 
-## Learn More
+5. Copy .env.example to .env and replace the values with your database configuration (in **server** directory)
 
-To learn more about Next.js, take a look at the following resources:
+   ```shell
+   cp .env.example .env
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+6. Run tests (in **server** directory)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```shell
+   npm run test
+   ```
 
-## Deploy on Vercel
+7. Run the server
+   ```shell
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+8. Run the client
+    ```
+    cd ..
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Screenshots
+1. Halaman Input
+![Halaman Input](/halaman-input.png)
+
+2. Halaman List
+![Halaman List](/halaman-list.png)
+
